@@ -1,7 +1,7 @@
 vcpkg_download_distfile(ARCHIVE
-    URLS "https://github.com/bkaradzic/bgfx.cmake/archive/refs/tags/v1.118.8384-362.tar.gz"
+    URLS "https://github.com/bkaradzic/bgfx.cmake/archive/refs/heads/3rdparty-naming.tar.gz"
     FILENAME "v1.118.8384-362.tar.gz"
-    SHA512 56203c40a724cd9e225d1c3142a30f8dd2e2f8cfc869a19cfa512bc69f0f62cd9460d016f1345a21bae9ef81323571d30dc588fde53f0fd0ba8628f7bbbab563
+    SHA512 836a6649cbd50d8e7b74421381e073dfc72dc9a4a5df6e881a5c30573a3fdb57c34f5ce90a49b4fab34f260ac6268f0425ba872787fd140606b1999fbe98fd3f
 )
 
 vcpkg_from_github(
@@ -18,7 +18,6 @@ vcpkg_from_github(
   HEAD_REF master
   REF 85109d7cdbe775a0ab72cf38510df525d5e8d3da
   SHA512 b3e082cd249e802e6d209ed45a552843604713a06597277b2855d1fa1c39b3d5136d5589599a85126eda218ccfee0ce6177f004cb5dccb912fe64ea7e07af2a8
-  PATCHES fix-headerfile.patch
 )
 
 vcpkg_from_github(
@@ -45,7 +44,6 @@ endif ()
 
 vcpkg_extract_source_archive(SOURCE_PATH
     ARCHIVE "${ARCHIVE}"
-    PATCHES fix-dependencies.patch
 )
 
 vcpkg_cmake_configure(
