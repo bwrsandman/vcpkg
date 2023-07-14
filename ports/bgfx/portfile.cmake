@@ -1,9 +1,9 @@
 vcpkg_from_github(
   OUT_SOURCE_PATH SOURCE_PATH
-  REPO "bkaradzic/bgfx.cmake"
-  HEAD_REF master
-  REF v${VERSION}
-  SHA512 8ae8150f1185d44fe8cd3bb2d7df5dfd8f843228bfbbd84cc0eed931234c02f180e35f6cf63f0d0ed73c825be5696f25e730a04f883b616d828b254657fedb6c
+  REPO "bwrsandman/bgfx.cmake"
+  HEAD_REF no-tools
+  REF no-tools
+  SHA512 a87cf326e4e0b01860bf601a0764d6ed739a3fe354b8984a3c2597e7e8c2671ba28d33492a9f4a3dc49ad7300830c2aeb769d15b0306690a2f92dd4f7ecf186b
 )
 
 vcpkg_from_github(
