@@ -1,9 +1,9 @@
 vcpkg_from_github(
   OUT_SOURCE_PATH SOURCE_PATH
   REPO "bwrsandman/bgfx.cmake"
-  HEAD_REF cross
-  REF cross
-  SHA512 409760f3e7ec68660ae455eda63cc7b6f63edcac041994bd485af8363b196915c04ee951e3a50499057230c32febb5736ac389430a0440c2171fc80d261f5676
+  HEAD_REF no-tools
+  REF no-tools
+  SHA512 c660176de98955fd32eeb16d150b498b7f9a59a6ec1b7268ea4d5a5efa55348bb4870e749eb061744ef49d865b7aedb39dfff461ecfe9169d2391e0eb81db206
 )
 
 vcpkg_from_github(
