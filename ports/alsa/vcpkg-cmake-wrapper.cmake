@@ -74,14 +74,16 @@ if(TARGET ALSA::ALSA)
     )
   endif()
 
-  find_package(Threads)
-  if(TARGET Threads::Threads)
-    list(APPEND ALSA_LIBRARIES Threads::Threads)
-    set_property(
-      TARGET ALSA::ALSA
-      APPEND
-      PROPERTY INTERFACE_LINK_LIBRARIES Threads::Threads
-    )
+  if(NOT VCPKG_TARGET_IS_EMSCRIPTEN)
+    find_package(Threads)
+    if(TARGET Threads::Threads)
+      list(APPEND ALSA_LIBRARIES Threads::Threads)
+      set_property(
+        TARGET ALSA::ALSA
+        APPEND
+        PROPERTY INTERFACE_LINK_LIBRARIES Threads::Threads
+      )
+    endif()
   endif()
 
   find_library(Z_VCPKG_HAS_LIBRT NAMES rt)
