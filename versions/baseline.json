@@ -8697,7 +8697,7 @@
       "port-version": 3
     },
     "unshield": {
-      "baseline": "1.5.1",
+      "baseline": "2023-12-27",
       "port-version": 0
     },
     "upb": {

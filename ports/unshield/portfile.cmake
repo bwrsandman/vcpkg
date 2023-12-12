@@ -1,7 +1,7 @@
 vcpkg_download_distfile(ARCHIVE
-    URLS https://github.com/twogood/unshield/archive/refs/tags/${VERSION}.tar.gz
+    URLS https://github.com/twogood/unshield/archive/082df8dab34617ff26b75b3759e437bcb498767b.tar.gz
     FILENAME unshield-${VERSION}.tar.gz
-    SHA512 acb130c461bed66dc3804394be067a68aea96a7cd20b348e713f64a11bf642b74f68fc172f220a9790b44573abbe01ed4585191158f27c40e863918a7342c1ca
+    SHA512 e29ac260fefc17c570b6632c19fecc35d99e31ea70f949f43624185d9b01d911a4f7376dd38ed5af1e7e528c94ba3da9475ee2b8832c2c2758bbf0b0370d050f
 )
 
 vcpkg_extract_source_archive_ex(
@@ -23,6 +23,8 @@ vcpkg_cmake_configure(
 vcpkg_cmake_install()
 
 vcpkg_copy_pdbs()
+
+vcpkg_cmake_config_fixup(CONFIG_PATH lib/cmake/unshield)
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/lib/pkgconfig")
