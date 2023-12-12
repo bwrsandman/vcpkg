@@ -8696,6 +8696,10 @@
       "baseline": "6.1.7",
       "port-version": 3
     },
+    "unshield": {
+      "baseline": "1.5.1",
+      "port-version": 0
+    },
     "upb": {
       "baseline": "2022-06-21",
       "port-version": 1
