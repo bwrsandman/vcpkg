@@ -4132,6 +4132,10 @@
       "baseline": "0.10.2",
       "port-version": 0
     },
+    "libcdio": {
+      "baseline": "2.1.0",
+      "port-version": 0
+    },
     "libcds": {
       "baseline": "2.3.3",
       "port-version": 4
@@ -8707,6 +8711,10 @@
     "unrar": {
       "baseline": "6.1.7",
       "port-version": 3
+    },
+    "unshield": {
+      "baseline": "2023-12-27",
+      "port-version": 0
     },
     "upb": {
       "baseline": "2022-06-21",
