@@ -1,7 +1,7 @@
 vcpkg_download_distfile(ARCHIVE
-    URLS https://github.com/twogood/unshield/archive/082df8dab34617ff26b75b3759e437bcb498767b.tar.gz
+    URLS https://github.com/bwrsandman/unshield/archive/6da5ca2d9461898d7d99f0f0c363654a85cfbf23.tar.gz
     FILENAME unshield-${VERSION}.tar.gz
-    SHA512 e29ac260fefc17c570b6632c19fecc35d99e31ea70f949f43624185d9b01d911a4f7376dd38ed5af1e7e528c94ba3da9475ee2b8832c2c2758bbf0b0370d050f
+    SHA512 8af4c6d5fac39c7d169ec66302b2fd432804443fb7954a98eb6086f579f1a0ccd1c39719e332c47fe2417070ebbc5a966d2b5e09a9a2b719a6c0edf8f048a26b
 )
 
 vcpkg_extract_source_archive_ex(
