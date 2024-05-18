@@ -2,7 +2,7 @@ vcpkg_download_distfile(
     ARCHIVE_FILE
     URLS https://github.com/bkaradzic/bgfx.cmake/releases/download/v${VERSION}/bgfx.cmake.v${VERSION}.tar.gz
     FILENAME bgfx.cmake.v${VERSION}.tar.gz
-    SHA512 369943ce0f8f2b5332d7334247d3a9ef0e28a6b1ff5ee250a01f83d1a0bd865687397da791e4c861d1c1b18ec4285f50153139f3c0e398611c7f3b672d1c751c
+    SHA512 b83d88f4884ee1cd0b0a7df7a50d40f16d0ba48d0c7460564a68c2df59de5173062d54af90b5d26da37edc55dfe90697e47d1851a800cd2f04aadab65eb2b72b
 )
 
 vcpkg_extract_source_archive(
@@ -34,6 +34,7 @@ vcpkg_cmake_configure(
           -DBGFX_BUILD_EXAMPLES=OFF
           -DBGFX_OPENGLES_VERSION=30
           -DBGFX_CMAKE_USER_SCRIPT=vcpkg-inject-packages.cmake
+          -DVCPKG_HOST_TRIPLET=${HOST_TRIPLET}
           ${FEATURE_OPTIONS}
 )
 
@@ -41,7 +42,7 @@ vcpkg_cmake_install()
 vcpkg_cmake_config_fixup(CONFIG_PATH "lib/cmake/${PORT}")
 vcpkg_copy_pdbs()
 
-if (BGFX_BUILD_TOOLS)
+if ("tools" IN_LIST FEATURES)
   vcpkg_copy_tools(
     TOOL_NAMES bin2c shaderc geometryc geometryv texturec texturev AUTO_CLEAN
   )
