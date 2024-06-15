@@ -2,16 +2,36 @@ if(VCPKG_TARGET_IS_WINDOWS)
   vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
 endif()
 
-vcpkg_download_distfile(
-  ARCHIVE_FILE
-  URLS https://github.com/bkaradzic/bgfx.cmake/releases/download/v${VERSION}/bgfx.cmake.v${VERSION}.tar.gz
-  FILENAME bgfx.cmake.v${VERSION}.tar.gz
-  SHA512 8aea4f3e548f8a79e8899c9d47ec3ca78dae48f77ae039d6f5df325ba73a8ddb70c9b7c1f0cb4129ac488b445e8a8523f36a964e509133bb4a449e073ebf6112
+vcpkg_from_github(
+  OUT_SOURCE_PATH SOURCE_PATH
+  REPO "bkaradzic/bgfx.cmake"
+  HEAD_REF master
+  REF c0ce1388cc8750894127c56daaa22063aa88bd70
+  SHA512 5204a42d2ea309caabfb44c1257208ec7b8f3aa6def265400e08348cd14c725859ed4015ae32a55de18d5c53b4593b32069d233ed5616059fb87440ac8e60b2c
 )
 
-vcpkg_extract_source_archive(
-  SOURCE_PATH
-  ARCHIVE "${ARCHIVE_FILE}"
+vcpkg_from_github(
+  OUT_SOURCE_PATH SOURCE_PATH_BX
+  REPO "bkaradzic/bx"
+  HEAD_REF master
+  REF 24527eabfd135dca569904baff1bdfd004ef8b41
+  SHA512 d66f202143725788c693c5048a4461d148f1b10ac9bd79d59b9f9732ea546765a75a7dbe6cbed44dab9efaf69bdae25a229e2ed06d3e2b83b14f59b38758a120
+)
+
+vcpkg_from_github(
+  OUT_SOURCE_PATH SOURCE_PATH_BIMG
+  REPO "bkaradzic/bimg"
+  HEAD_REF master
+  REF 59f188a6add2c9ac4b986ccf9724575d3c41da9b
+  SHA512 c5d2545a10bd8037a19546da6bacb6f8cddda312c9e9d84d60fb486ac6239dab8fbb95b1d6c3d7cce4f3682b26f2537968d503814c08449facb633c1d51b8d37
+)
+
+vcpkg_from_github(
+  OUT_SOURCE_PATH SOURCE_PATH_BGFX
+  REPO "bkaradzic/bgfx"
+  HEAD_REF master
+  REF d1feabe3194b4b41ffd9c5747536acfadeae919b
+  SHA512 54235179683cc78bd9b53809268a5f6fea3a9564b0549b0a6ad4a000daa049cbf19ef9cfafd4c57fbfda1b942a676abaacacd43df08e3b364d1ba2f8ce30e39b
 )
 
 vcpkg_check_features(
@@ -30,6 +50,9 @@ endif ()
 vcpkg_cmake_configure(
   SOURCE_PATH "${SOURCE_PATH}"
   OPTIONS
+    -DBX_DIR=${SOURCE_PATH_BX}
+    -DBIMG_DIR=${SOURCE_PATH_BIMG}
+    -DBGFX_DIR=${SOURCE_PATH_BGFX}
     -DBGFX_LIBRARY_TYPE=${BGFX_LIBRARY_TYPE}
     -DBX_AMALGAMATED=ON
     -DBGFX_AMALGAMATED=ON
